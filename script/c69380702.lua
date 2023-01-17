@@ -49,7 +49,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 function s.aclimit(e,re,tp)
-	return re:GetHandler()~=e:GetHandler() and re:IsActiveType(TYPE_MONSTER)
+	return not re:GetHandler():IsCode(id) and re:IsActiveType(TYPE_MONSTER)
 end
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
 	return re:GetHandler()~=e:GetHandler() and re:GetHandler():IsOnField()
